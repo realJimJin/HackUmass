@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Pacifico&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Set body to full viewport height */
+}
+
+.main-content {
+  text-align: center;
+  /* Center content */
+}
+
+.title {
+  font-size: 6rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.slogan {
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-top: 1rem;
+  /* Adjust spacing */
+}
+
+.start-for-free-center {
+  display: inline-block;
+  padding: 1rem;
+  font-size: 15px;
+  text-decoration: none;
+  background-color: #212ea1;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.start-for-free-center:hover {
+  background-color: #285388;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 5rem;
+  }
+
+  .slogan {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 3rem;
+  }
+}
