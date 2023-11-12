@@ -13,12 +13,28 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    sex: {
+        type: String,
+        enum: ['M', 'F', 'Other'], // Optional and can choose between Male, Female, or Other
+        required: false
+    },
+    age: {
+        type: Number,
+        required: false
+    },
+    height: {
+        type: Number, // Assuming height in cm
+        required: false
+    },
+    weight: {
+        type: Number, // Assuming weight in kg
+        required: false
     }
 })
 
 // static signup method
-userSchema.statics.signup = async function(email, password) {
-
+userSchema.statics.signup = async function (email, password) {
     // Validation 
     if (!email || !password) {
         throw Error('All fields must be filled')
@@ -27,9 +43,8 @@ userSchema.statics.signup = async function(email, password) {
         throw Error('Email is not valid')
     }
     if (!validator.isStrongPassword(password)) {
-        throw Error('Password is not valid')
+        throw Error('Password is not strong enough')
     }
-
 
     const exists = await this.findOne({ email })
 
@@ -47,7 +62,7 @@ userSchema.statics.signup = async function(email, password) {
 }
 
 // static login method
-userSchema.statics.login = async function(email, password) {
+userSchema.statics.login = async function (email, password) {
     if (!email || !password) {
         throw Error('All fields must be filled')
     }
@@ -60,7 +75,7 @@ userSchema.statics.login = async function(email, password) {
 
     const match = await bcrypt.compare(password, user.password)
 
-    if (!match){
+    if (!match) {
         throw Error('Incorrect password')
     }
 
