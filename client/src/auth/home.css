@@ -1,40 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Pacifico&display=swap');
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Noto Sans KR', 'Arial', sans-serif;
+/* Assuming .home-container is the top-level class in your Home component */
+.home-container {
   display: flex;
   justify-content: center;
+  /* Center horizontally */
   align-items: center;
+  /* Center vertically */
   height: 100vh;
-  /* Set body to full viewport height */
-}
-
-.main-content {
+  /* Take up full viewport height */
+  scroll-behavior: smooth;
   text-align: center;
   /* Center content */
 }
 
-.title {
+
+.home-container .title {
   font-size: 6rem;
   font-weight: 300;
   margin: 0;
 }
 
-.slogan {
+.home-container .slogan {
   font-size: 1.4rem;
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 30px;
   margin-top: 1rem;
-  /* Adjust spacing */
 }
 
-.start-for-free-center {
+.home-container .start-for-free-center {
   display: inline-block;
   padding: 1rem;
   font-size: 15px;
@@ -46,29 +41,29 @@ body {
   margin-top: 2rem;
 }
 
-.start-for-free-center:hover {
+.home-container .start-for-free-center:hover {
   background-color: #285388;
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 1024px) {
-  .title {
+  .home-container .title {
     font-size: 5rem;
   }
 
-  .slogan {
+  .home-container .slogan {
     font-size: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .title {
+  .home-container .title {
     font-size: 4rem;
   }
 }
 
 @media (max-width: 480px) {
-  .title {
+  .home-container .title {
     font-size: 3rem;
   }
 }
