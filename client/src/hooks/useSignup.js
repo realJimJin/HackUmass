@@ -13,8 +13,8 @@ export const useSignup = () => {
         try {
             const response = await fetch('https://hackumass.onrender.com/api/user/signup', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({email, password})
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
             });
 
 
@@ -28,8 +28,9 @@ export const useSignup = () => {
             }
 
             if (response.ok) {
-                localStorage.setItem('user', JSON.stringify(json)); // Save user to local storage
-                dispatch({type: 'LOGIN', payload: json}); // Update auth context
+                // Assuming json contains _id along with email and token
+                localStorage.setItem('user', JSON.stringify(json));
+                dispatch({ type: 'LOGIN', payload: json });
                 setIsLoading(false);
             }
         } catch (err) {
